@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: '[https://aricolsen.ca](https://aricolsen.ca)',
+  site: 'https://aricolsen.ca',
   integrations: [mdx(), sitemap()],
 
   fonts: [
