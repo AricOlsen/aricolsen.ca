@@ -6,7 +6,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<main>
-		<div class="flex flex-row gap-8 border border-neutral-800 rounded-4xl p-8 sm:p-12 mb-12 bg-black hover:border-neutral-50 text-center" >
+		<div class="flex flex-col sm:flex-row 
+				gap-8 
+				border border-neutral-800 rounded-4xl 
+				p-8 sm:p-12 mb-12 
+				bg-black hover:border-neutral-50 
+				text-center items-center" >
 			<div class="w-32 h-32 sm:w-48 sm:h-48 rounded-full overflow-hidden">
 					<img
 					src="src\assets\Sample_User_Icon.png"
@@ -18,7 +23,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
                 <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tighter text-white tracking-wider">
                     Aric Olsen
                 </h1>
-				<span class="text-xl sm:text-2xl text-neutral-400 ">
+				<span class="text-xl sm:text-1xl text-neutral-400 ">
 					Academic | Tutor | Researcher | Runner | Leader | Brother | Son | Partner
 				</span>
 				<span class="text-xl sm:text-2xl text-neutral-400 mt-2">
@@ -27,19 +32,5 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
             </div>
 
 		</div>
-			
-		<p>
-				Hey There! I am Aric. This site is the hub for all of my pursuits. Whether you are brought here by my academic, professional, hobbyist,
-				or personal roles, you have found the right place to access all things me!
-		</p>
-		<p>
-				In case you haven't met me, or are looking for an update on what i've been up to, here are some of the roles I play 
-				in our world:
-		</p>
-		<p>
-			<code>Student: Aerospace Engineering (B.Eng)</code><br>
-			<code>Tutor: Math, Physics, Chemistry</code><br>	
-			<code>Leader: Propulsion Project Manager (MetRocketry)</code><br>
-		</p>
 	</main>
 </BaseLayout>
