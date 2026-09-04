@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+const { race, date, distance, guntime, chiptime, location, photo, target, link } = Astro.props;
+
+---
+
+
+<div class="flex flex-col border border-neutral-50 rounded-lg p-4 bg-black/40 backdrop-blur-sm text-slate-50">
+    <h1 class="text-2xl font-bold mb-2 text-slate-50">
+        {race}
+    </h1>
+    <div class="grid grid-cols-2">
+        <p>Date: {date}</p>
+        <p>Goal Time: {target}</p>
+        <p>Distance: {distance}</p>
+        <p>Chip Time: {chiptime}</p>
+        <p>Location: {location}</p>
+        <p>Gun Time: {guntime}</p>
+    </div>
+    <a href={link} target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300">View Results</a>
+    <img src={photo} alt={`Photo from ${race}`} class="mt-4 rounded-lg aspect-square w-full object-cover" />
+</div>

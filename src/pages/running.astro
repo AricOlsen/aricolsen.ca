@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import EventCard from '../components/EventCard.astro';
+import RaceCard from '../components/RaceCard.astro';
 
 const nextEvent = {
     title: 'Montreal Marathon 10k',
@@ -16,6 +16,7 @@ const minutesUntilEvent = Math.floor(millisecondsUntilEvent / (1000 * 60)) % 60;
 const secondsUntilEvent = Math.floor(millisecondsUntilEvent / 1000) % 60;
 ---
 <BaseLayout>
+    <h1 class="text-4xl font-bold mb-4 text-slate-50">Next Race</h1>
     <div class="relative w-full rounded-2xl overflow-hidden bg-black p-8 min-h-[400px] flex flex-col justify-center">
         <img 
             src="https://couronsmtl.com/wp-content/uploads/2024/09/Rectangle-1.png" 
@@ -24,8 +25,7 @@ const secondsUntilEvent = Math.floor(millisecondsUntilEvent / 1000) % 60;
         />
 
         <div class="relative z-10">
-            <h1 class="text-4xl font-bold mb-4 text-slate-50">Next Race</h1>
-            <h2 class="text-2xl font-semibold mb-8 text-slate-50">{nextEvent.title}</h2>
+            <h2 class="text-4xl font-semibold mb-8 text-slate-50">{nextEvent.title}</h2>
             
             <div id="countdown" data-event-date={nextEvent.date} class="flex flex-row justify-start items-center space-x-4 sm:space-x-6 text-slate-50 mb-8">
                 <div class="flex flex-col border border-neutral-50 rounded-lg p-2 bg-black/40 backdrop-blur-sm"><span id="days" class="sm:text-6xl text-3xl font-black">{daysUntilEvent}</span><span class="text-sm text-slate-300">Days</span></div>
@@ -34,9 +34,13 @@ const secondsUntilEvent = Math.floor(millisecondsUntilEvent / 1000) % 60;
                 <div class="flex flex-col border border-neutral-50 rounded-lg p-2 bg-black/40 backdrop-blur-sm"><span id="seconds" class="sm:text-6xl text-3xl font-black">{String(secondsUntilEvent).padStart(2, '0')}</span><span class="text-sm text-slate-300">Secs</span></div>
             </div>
             
-            <p class="mb-1 text-slate-50 font-medium">Location: {nextEvent.location}</p>
-            <p class="mb-1 text-slate-50 font-medium">Target Time: {nextEvent.target}</p>
+            <p class="mb-1 text-2xl text-slate-50 font-medium">Location: {nextEvent.location}</p>
+            <p class="mb-1 text-2xl text-slate-50 font-medium">Target Time: {nextEvent.target}</p>
         </div>
+    </div>
+    <h1 class="text-4xl font-bold mb-4 text-slate-50 pt-10">Previous Races</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6">
+        <RaceCard race="Hamilton Marathon 10k" date="2025-11-01" distance="10km" guntime="0:55:03" chiptime="0:52:50" location="Hamilton, ON" photo="https://d31i1r7ph3a4jj.cloudfront.net/101841/1200/101841-100175-1000327060.jpg" target="0:55:00" link="https://results.raceroster.com/v3/events/973pcecgmc7dv4cp/race/246132?filter_search=Aric%2C+Olsen"></RaceCard>
     </div>
 </BaseLayout>
 
